@@ -1,0 +1,753 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap");
+
+:root {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===== Page Transition System ===== */
+
+/* body {
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+  margin: 0;
+  background: white;
+} */
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: white;
+}
+
+/* This is the outer shell */
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  background: white;        
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+} 
+
+/* Your actual design */
+.app {
+  width: 1280px;
+  height: 832px;
+  transform-origin: center;
+} 
+
+body.page-visible {
+  opacity: 1;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 32px;
+}
+
+.menu-page {
+  display: block;
+  min-height: 832px;
+  padding: 0;
+  background: white;
+}
+
+.menu-frame {
+  position: relative;
+  width: 1280px;
+  height: 832px;
+  background: white;
+}
+
+.menu-page,
+.menu-frame {
+  background: white !important;
+}
+
+/* Page 2 – Hint card */
+.page-hint {
+  display: block;
+  padding: 0;
+  background: white;
+}
+
+.hint-frame {
+  position: relative;
+  width: 1280px;
+  height: 832px;
+  margin: 0 auto;
+  background: white;
+  overflow: hidden;
+}
+
+.hint-arrow {
+  position: absolute;
+  top: 382px;
+  width: 125px;
+  height: 125px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hint-arrow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hint-arrow-left {
+  left: -6px;
+}
+
+.hint-arrow-right {
+  right: -6px;
+}
+
+.cta-icon-img {
+  width: 48px;      /* adjust if needed */
+  height: 38px;
+  display: block;
+  /* margin-right: 1px;  */
+  /* vertical-align: left; */
+}
+
+.hint-card {
+  position: absolute;
+  top: 86px;
+  left: 132px;
+  width: 1016px;
+  padding: 40px 32px 48px 48px;
+  background: white;
+}
+
+.hint-title {
+  margin: 0 0 32px;
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 1.21;
+  text-align: center;
+  background-image: linear-gradient(90deg, rgba(163, 52, 182, 1), rgba(94, 28, 103, 1) 91%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hint-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hint-item {
+  display: flex;
+  gap: 16px;
+  font-size: 34px;
+  color: #000000;
+}
+
+.hint-bullet {
+  font-size: 48px;
+  line-height: 1;
+  margin-top: 6px;
+}
+
+.hint-text {
+  font-size: 28px;
+  line-height: 1.35;
+}
+
+.hint-text strong {
+  font-size: 34px;
+  font-weight: 700;
+  color: #000000;
+}
+
+/* Page 3 – Hero */
+.page-hero {
+  display: block;
+  min-height: 832px;
+  padding: 0;
+  background: white;
+}
+
+.page-hero .hero-frame {
+  margin: 0 auto;
+}
+
+.hero-frame {
+  position: relative;
+  width: 1280px;
+  height: 832px;
+  background: white;
+  overflow: hidden;
+}
+
+.hero-side-arrow {
+  position: absolute;
+  top: 392px;
+  left: -16px;
+  width: 125px;
+  height: 125px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero-side-arrow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-visual {
+  position: absolute;
+  top: 61px;
+  left: 407px;
+  width: 428px;
+  height: 725px;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-title {
+  position: absolute;
+  top: 248px;
+  left: 365px;
+  width: 689px;
+  margin: 0;
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 1.21;
+  background-image: linear-gradient(90deg, rgba(163, 52, 182, 1), rgba(94, 28, 103, 1) 75%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  position: absolute;
+  top: 405px;
+  left: 355px;
+  width: 562px;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.21;
+  text-align: center;
+  color: #a334b6;
+}
+
+.hero-cta {
+  position: absolute;
+  top: 536px;
+  left: 504px;
+  width: 233.37px;
+  height: 62.12px;
+  border: none;
+  border-radius: 20px;
+  background: #5e1c67;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-left: 32px;
+  cursor: pointer;
+}
+
+.cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 37px;
+  font-size: 20px;
+  border-radius: 4px;
+  background: #d9d9d9;
+  color: #5e1c67;
+  border: 1px solid #ffffff;
+}
+
+.cta-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Page 1 – Comparison grid */
+.frame {
+  position: relative;
+  width: 1280px;
+  height: 832px;
+  background: white;
+  overflow: hidden;
+}
+
+.background-panel {
+  position: absolute;
+  top: 126px;
+  left: 71px;
+  width: 1149px;
+  height: 613px;
+  border-radius: 20px;
+  background: #d9d9d9;
+}
+
+.intro {
+  position: absolute;
+  top: 44px;
+  left: 68px;
+  width: 1137px;
+  margin: 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.21;
+  color: #481750;
+}
+
+.flag {
+  position: absolute;
+  object-fit: cover;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+}
+
+.flag-uk-left {
+  top: 150px;
+  left: 289px;
+  width: 80px;
+  height: 43px;
+}
+
+.flag-uk-right {
+  top: 150px;
+  left: 923px;
+  width: 80px;
+  height: 43px;
+}
+
+.flag-india-left {
+  top: 409px;
+  left: 181px;
+  width: 72px;
+  height: 48px;
+}
+
+.flag-india-right {
+  top: 409px;
+  left: 1003px;
+  width: 72px;
+  height: 48px;
+}
+
+.quote {
+  position: absolute;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.21;
+  text-align: center;
+  color: #000000;
+}
+
+.quote-uk-history {
+  top: 201px;
+  left: 801px;
+  width: 327px;
+}
+
+.quote-nicola {
+  top: 201px;
+  left: 166px;
+  width: 325px;
+}
+
+.quote-sal {
+  top: 464px;
+  left: 91px;
+  width: 290px;
+}
+
+.quote-india {
+  top: 463px;
+  left: 893px;
+  width: 291px;
+}
+
+.accent-image {
+  position: absolute;
+  width: 119.37px;
+  height: 78.06px;
+  object-fit: cover;
+  border-radius: 18px;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.2));
+}
+
+.accent-top-left {
+  top: 277px;
+  left: 466px;
+}
+
+.accent-top-right {
+  top: 276px;
+  left: 666px;
+}
+
+.accent-mid-left {
+  top: 410px;
+  left: 347px;
+}
+
+.accent-mid-right {
+  top: 409px;
+  left: 806px;
+}
+
+.portrait {
+  position: absolute;
+  top: 354px;
+  left: 466px;
+  width: 342px;
+  height: 477px;
+  object-fit: cover;
+  border-radius: 28px;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.35));
+}
+
+.label {
+  position: absolute;
+  margin: 0;
+  font-size: 33px;
+  font-weight: 800;
+  line-height: 1.21;
+  text-transform: uppercase;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.label-human {
+  top: 518px;
+  left: 492px;
+  width: 129px;
+  background-image: linear-gradient(90deg, rgba(164, 52, 182, 1), rgba(72, 23, 80, 1));
+}
+
+.label-ai {
+  top: 518px;
+  left: 680px;
+  width: 35px;
+  background-image: linear-gradient(180deg, rgba(164, 52, 182, 1), rgba(72, 23, 80, 1));
+}
+
+.cta {
+  position: absolute;
+  top: 756px;
+  left: 1082px;
+  width: 150px;
+  height: 57px;
+  border: none;
+  border-radius: 20px;
+  background: #d9d9d9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta span {
+  font-size: 34px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Page 4 – Question/Game Page */
+.page-4 {
+  display: block;
+  min-height: 832px;
+  padding: 0;
+  background: white;
+}
+
+.page-4 .page4-frame {
+  margin: 0 auto;
+}
+
+.page4-frame {
+  position: relative;
+  width: 1280px;
+  height: 832px;
+  background: white;
+  overflow: hidden;
+}
+
+/* Score indicator - positioned at top right */
+.page4-score {
+  position: absolute;
+  top: 40px;
+  left: 1150px;
+  width: 84px;
+  height: 61px;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.21;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.56);
+  z-index: 10;
+}
+
+/* Background images - behind other content */
+.page4-bg-image {
+  position: absolute;
+  object-fit: cover;
+}
+
+.page4-bg-image-1 {
+  top: 392px;
+  left: 429px;
+  width: 211px;
+  height: 400px;
+  opacity: 0.4;
+  z-index: 1;
+  border-radius: 0;
+}
+
+.page4-bg-image-2 {
+  top: 392px;
+  left: 666px;
+  width: 211px;
+  height: 400px;
+  opacity: 0.4;
+  z-index: 1;
+  border-radius: 0;
+}
+
+.page4-bg-image-3 {
+  top: 11px;
+  left: 1136px;
+  width: 112px;
+  height: 179px;
+  opacity: 0.75;
+  z-index: 1;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+/* Header panel */
+.page4-header-panel {
+  position: absolute;
+  top: 133px;
+  left: 55px;
+  width: 330px;
+  height: 57px;
+  background: #d9d9d9;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.page4-header-number {
+  position: absolute;
+  top: 144px;
+  left: 73px;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.21;
+  color: rgba(0, 0, 0, 0.47);
+  z-index: 3;
+}
+
+.page4-header-text {
+  position: absolute;
+  top: 144px;
+  left: 170px;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.21;
+  color: rgba(0, 0, 0, 0.47);
+  z-index: 3;
+}
+
+.page4-flag {
+  position: absolute;
+  top: 142px;
+  left: 105px;
+  width: 57px;
+  height: 38px;
+  object-fit: cover;
+  z-index: 3;
+}
+
+/* Main quote text */
+.page4-quote {
+  position: absolute;
+  top: 222px;
+  left: 33px;
+  width: 1137px;
+  min-height: 150px;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.21;
+  text-align: left;
+  color: #a334b6;
+  z-index: 4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* AI and Human labels */
+.page4-label {
+  position: absolute;
+  margin: 0;
+  font-weight: 400;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.21;
+  text-align: center;
+  color: #000000;
+  z-index: 5;
+}
+
+.page4-label-ai {
+  top: 549px;
+  left: 535px;
+  width: 60px;
+  height: 116px;
+  font-size: 48px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.page4-label-human {
+  top: 549px;
+  left: 689px;
+  width: 166px;
+  height: 108px;
+  font-size: 45px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cta {
+  display: inline-flex;
+  /* act like a button */
+  flex-direction: row;
+  /* keep text + arrow on the same line */
+  align-items: center;
+  /* vertical centering */
+  gap: 8px;
+  /* spacing between "Next" and → */
+
+  text-decoration: none;
+  /* remove link underline */
+  color: inherit;
+  /* use your existing text color */
+}
+
+.cta span {
+  text-decoration: none;
+  /* remove underline on span too */
+}
+
+/* Page 4 False – Incorrect Answer */
+.page4-false-title {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 150px;
+  font-weight: 800;
+  color: #D22B2B;
+  /* Red color for WRONG */
+  margin: 0;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.page4-false-next-btn {
+  position: absolute;
+  top: 756px;
+  left: 1082px;
+  width: 150px;
+  height: 57px;
+  border: none;
+  border-radius: 20px;
+  background: #d9d9d9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: inherit;
+  gap: 8px;
+}
+
+.page4-false-next-btn span {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.page4-false-next-icon {
+  font-size: 24px;
+  color: #000000;
+}
+
+.page4-false-ai-glow {
+  filter: drop-shadow(0 0 30px rgba(220, 50, 50, 0.8));
+  opacity: 0.8 !important;
+  /* Make it slightly more visible than the default 0.4 if needed, or just keep the glow strong */
+}
+
+html {
+  background: white !important;
+}
+
+body, .viewport, .app {
+  background: white !important;
+}

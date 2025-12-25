@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InspAIred Landing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .page1-exit-btn {
+        position: absolute;
+        top: 760px;
+        left: 55px;
+        width: 110px;
+        height: 57px;
+        border: none;
+        border-radius: 20px;
+        background: #ecbaba;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .page1-exit-text {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          sans-serif;
+        font-size: 34px;
+        font-weight: 600;
+        line-height: 1.21;
+        color: #000000;
+        margin: 0;
+      }
+
+      .page.page1 {
+      padding: 0;
+      }
+
+    </style>
+  </head>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const exitBtn = document.querySelector('.page1-exit-btn');
+  
+      if (exitBtn) {
+        exitBtn.addEventListener('click', () => {
+          window.location.href = 'Menu.html';
+        });
+      }
+    });
+  </script>
+  
+  <script>
+    // Fade in when page loads
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("page-visible");
+    });
+  </script>
+  
+  <script>
+    function scaleApp() {
+      const app = document.querySelector(".app");
+      const scaleX = window.innerWidth / 1280;
+      const scaleY = window.innerHeight / 832;
+      const scale = Math.min(scaleX, scaleY);
+  
+      app.style.transform = `scale(${scale})`;
+    }
+  
+    window.addEventListener("resize", scaleApp);
+    window.addEventListener("DOMContentLoaded", scaleApp);
+  </script>
+  
+  <body>
+    <div class="viewport">
+      <div class="app">
+        <main class="page page1">
+          <section class="frame">
+            <div class="background-panel"></div>
+    
+            <p class="intro">
+              We compare AI-generated and human-written inspiring Reddit posts from
+              India and the UK, finding notable cross-cultural linguistic
+              differences between real and generated content.
+            </p>
+    
+            <img
+              src="assets/flag_uk_left.png"
+              alt="UK flag"
+              class="flag flag-uk-left"
+            />
+            <img
+              src="assets/flag_uk_right.png"
+              alt="UK flag"
+              class="flag flag-uk-right"
+            />
+    
+            <img
+              src="assets/flag_india_left.png"
+              alt="India flag"
+              class="flag flag-india-left"
+            />
+            <img
+              src="assets/flag_india_right.png"
+              alt="India flag"
+              class="flag flag-india-right"
+            />
+    
+            <p class="quote quote-nicola">
+              “I remember watching the 2012 Olympics and being struck at how full of
+              life Nicola Adams was […]”
+            </p>
+    
+            <p class="quote quote-sal">
+              “I love what Sal Khan has done in bringing education to the masses
+              […]”
+            </p>
+    
+            <p class="quote quote-india">
+              “I’m massively inspired by the scientific strides India has been
+              making! ISRO’s Mars Orbiter Mission […]”
+            </p>
+    
+            <p class="quote quote-uk-history">
+              “The UK’s rich history inspires me — how we’ve overcome wars,
+              political upheavals, and recessions […]”
+            </p>
+    
+            <img
+              src="assets/image4.png"
+              alt="Mood board detail"
+              class="accent-image accent-top-left"
+            />
+            <img
+              src="assets/image3.png"
+              alt="Mood board detail"
+              class="accent-image accent-top-right"
+            />
+            <img
+              src="assets/image6.png"
+              alt="Mood board detail"
+              class="accent-image accent-mid-left"
+            />
+            <img
+              src="assets/image5.png"
+              alt="Mood board detail"
+              class="accent-image accent-mid-right"
+            />
+    
+            <img
+              src="assets/picture6.png"
+              alt="Portrait collage"
+              class="portrait"
+            />
+    
+            <p class="label label-human">HUMAN</p>
+            <p class="label label-ai">AI</p>
+    
+            <a class="cta" href="Page2.html" role="button" aria-label="Next">
+              <span>Next →</span>
+            </a>
+    
+            <button class="page1-exit-btn" type="button">
+              <span class="page1-exit-text">Exit</span>
+            </button>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+  

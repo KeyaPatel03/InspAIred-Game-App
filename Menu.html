@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InspAIred - Game Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Menu page styles matching Figma design exactly */
+      .menu-page {
+        display: block;
+        min-height: 832px;
+        padding: 0;
+        background: #ededed;
+      }
+
+      .menu-page .menu-frame {
+        margin: 0 auto;
+      }
+
+      .menu-frame {
+        position: relative;
+        width: 1280px;
+        height: 832px;
+        background: #ededed;
+        overflow: hidden;
+      }
+
+      /* Title */
+      .menu-title {
+        position: absolute;
+        top: 40px;
+        left: 447px;
+        width: 609px;
+        height: 109px;
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.21;
+        text-align: left;
+        background-image: linear-gradient(90deg, rgba(163, 52, 182, 1) 0%, rgba(94, 28, 103, 1) 75%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      /* Game logo images */
+      .menu-logo {
+        position: absolute;
+        width: 166px;
+        height: 166px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+
+      /* Row 1 logos */
+      .menu-logo-11 {
+        top: 152px;
+        left: 339px;
+      }
+
+      .menu-logo-9 {
+        top: 152px;
+        left: 586px;
+      }
+
+      .menu-logo-3 {
+        top: 149px;
+        left: 94px;
+      }
+
+      .menu-logo-2 {
+        top: 149px;
+        left: 830px;
+      }
+
+      .menu-logo-7 {
+        top: 152px;
+        left: 1056px;
+      }
+
+      /* Row 2 logos */
+      .menu-logo-1 {
+        top: 369px;
+        left: 85px;
+      }
+
+      .menu-logo-4 {
+        top: 369px;
+        left: 339px;
+      }
+
+      .menu-logo-5 {
+        top: 369px;
+        left: 586px;
+      }
+
+      .menu-logo-8 {
+        top: 376px;
+        left: 821px;
+      }
+
+      .menu-logo-menu1 {
+        top: 369px;
+        left: 1056px;
+      }
+
+      /* Game labels */
+      .menu-label {
+        position: absolute;
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.21;
+        text-align: center;
+        color: #000000;
+        cursor: pointer;
+      }
+
+      /* Labels for Row 1 */
+      .menu-label-human-vs-ai {
+        top: 324px;
+        left: 103px;
+        width: 148px;
+        height: 29px;
+      }
+
+      .menu-label-game-2 {
+        top: 324px;
+        left: 377px;
+        width: 89px;
+        height: 29px;
+      }
+
+      .menu-label-game-3 {
+        top: 318px;
+        left: 623px;
+        width: 90px;
+        height: 29px;
+      }
+
+      .menu-label-game-4 {
+        top: 318px;
+        left: 867px;
+        width: 90px;
+        height: 29px;
+      }
+
+      .menu-label-game-5 {
+        top: 324px;
+        left: 1095px;
+        width: 89px;
+        height: 29px;
+      }
+
+      /* Labels for Row 2 */
+      .menu-label-game-6 {
+        top: 527px;
+        left: 122px;
+        width: 90px;
+        height: 29px;
+      }
+
+      .menu-label-game-7 {
+        top: 527px;
+        left: 378px;
+        width: 88px;
+        height: 29px;
+      }
+
+      .menu-label-inspaired {
+        top: 535px;
+        left: 613px;
+        width: 111px;
+        height: 29px;
+      }
+
+      .menu-label-game-9 {
+        top: 535px;
+        left: 867px;
+        width: 90px;
+        height: 29px;
+      }
+
+      .menu-label-game-10 {
+        top: 535px;
+        left: 1089px;
+        width: 102px;
+        height: 29px;
+      }
+    </style>
+  </head>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const inspairedLogo = document.querySelector('.menu-logo-5');
+  
+      if (inspairedLogo) {
+        inspairedLogo.addEventListener('click', () => {
+          window.location.href = 'Page1.html';
+        });
+      }
+    });
+  </script>
+  
+  <script>
+    // Fade in when page loads
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("page-visible");
+    });
+  </script>  
+  
+  <script>
+    function scaleApp() {
+      const app = document.querySelector(".app");
+      const scaleX = window.innerWidth / 1280;
+      const scaleY = window.innerHeight / 832;
+      const scale = Math.min(scaleX, scaleY);
+  
+      app.style.transform = `scale(${scale})`;
+    }
+  
+    window.addEventListener("resize", scaleApp);
+    window.addEventListener("DOMContentLoaded", scaleApp);
+  </script>
+  
+  <body>
+    <div class="viewport">
+      <div class="app">
+        <main class="menu-page">
+          <section class="menu-frame">
+            <!-- Title -->
+            <h1 class="menu-title">🎮 Select Your Game!</h1>
+    
+            <!-- Row 1: Logos -->
+            <img
+              src="assets/logo3_menu.png"
+              alt="Human Vs AI"
+              class="menu-logo menu-logo-3"
+            />
+            <img
+              src="assets/logo11_menu.png"
+              alt="Game 2"
+              class="menu-logo menu-logo-11"
+            />
+            <img
+              src="assets/logo9_menu.png"
+              alt="Game 3"
+              class="menu-logo menu-logo-9"
+            />
+            <img
+              src="assets/logo2_menu.png"
+              alt="Game 4"
+              class="menu-logo menu-logo-2"
+            />
+            <img
+              src="assets/logo7_menu.png"
+              alt="Game 5"
+              class="menu-logo menu-logo-7"
+            />
+    
+            <!-- Row 1: Labels -->
+            <p class="menu-label menu-label-human-vs-ai">Human Vs AI</p>
+            <p class="menu-label menu-label-game-2">Game 2</p>
+            <p class="menu-label menu-label-game-3">Game 3</p>
+            <p class="menu-label menu-label-game-4">Game 4</p>
+            <p class="menu-label menu-label-game-5">Game 5</p>
+    
+            <!-- Row 2: Logos -->
+            <img
+              src="assets/logo1_menu.png"
+              alt="Game 6"
+              class="menu-logo menu-logo-1"
+            />
+            <img
+              src="assets/logo4_menu.png"
+              alt="Game 7"
+              class="menu-logo menu-logo-4"
+            />
+            <img
+              src="assets/logo5_menu.png"
+              alt="InspAIred"
+              class="menu-logo menu-logo-5"
+            />
+            <img
+              src="assets/logo8_menu.png"
+              alt="Game 9"
+              class="menu-logo menu-logo-8"
+            />
+            <img
+              src="assets/logo_menu1.png"
+              alt="Game 10"
+              class="menu-logo menu-logo-menu1"
+            />
+    
+            <!-- Row 2: Labels -->
+            <p class="menu-label menu-label-game-6">Game 6</p>
+            <p class="menu-label menu-label-game-7">Game 7</p>
+            <p class="menu-label menu-label-inspaired">InspAIred</p>
+            <p class="menu-label menu-label-game-9">Game 9</p>
+            <p class="menu-label menu-label-game-10">Game 10</p>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
+
+

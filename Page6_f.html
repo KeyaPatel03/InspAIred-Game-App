@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InspAIred - Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Page4_f specific styles matching Figma design exactly */
+      .page4f-frame {
+        position: relative;
+        width: 1280px;
+        height: 832px;
+        background: white;
+        overflow: hidden;
+        margin: 0 auto;
+      }
+
+      /* Score indicator - exact positioning from Figma */
+      .page4f-score {
+        position: absolute;
+        top: 45px;
+        left: 1155px;
+        width: 75px;
+        height: 61px;
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 1.21;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.56); 
+        z-index: 10;
+      }
+
+      /* Picture5 at top right */
+      .page4f-picture5 {
+        position: absolute;
+        top: 16px;
+        left: 1136px;
+        width: 112px;
+        height: 179px;
+        object-fit: cover;
+        opacity: 0.75;
+        z-index: 1;
+      }
+
+
+
+      /* Main quote text - left aligned matching Page4.html */
+      .page4f-quote {
+        position: absolute;
+        top: 222px;
+        left: 33px;
+        width: 1137px;
+        min-height: 150px;
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.21;
+        text-align: left;
+        color: #a334b6;
+        z-index: 4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      /* Background images with shadows */
+      .page4f-bg-image {
+        position: absolute;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      /* Picture3 with yellow shadow */
+      .page4f-bg-image-1 {
+        top: 392px;
+        left: 429px;
+        width: 211px;
+        height: 400px;
+        opacity: 0.4;
+        box-shadow: 0px 4px 4px 0px rgba(250, 246, 27, 0.25);
+      }
+
+      /* Picture4 */
+      .page4f-bg-image-2 {
+        top: 392px;
+        left: 666px;
+        width: 211px;
+        height: 400px;
+        opacity: 0.4;
+      }
+
+      /* AI and Human labels - exact positioning */
+      .page4f-label {
+        position: absolute;
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.21;
+        text-align: center;
+        color: #000000;
+        z-index: 5;
+      }
+
+      .page4f-label-ai {
+        top: 549px;
+        left: 535px;
+        width: 60px;
+        height: 116px;
+        font-size: 48px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+        text-shadow: 0px 4px 68px rgba(234, 7, 15), 0px 0px 20px rgba(234, 7, 15);
+      }
+
+      .page4f-label-human {
+        top: 549px;
+        left: 689px;
+        width: 166px;
+        height: 108px;
+        font-size: 45px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      /* Right arrow */
+      .page4f-arrow {
+        position: absolute;
+        top: 377px;
+        left: 1185px;
+        width: 125px;
+        height: 125px;
+        object-fit: cover;
+        z-index: 6;
+      }
+    </style>
+  </head>
+
+  <script>
+    // Fade in when page loads
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("page-visible");
+    });
+  </script>
+  
+  <script>
+    // Initialize score once
+  if (localStorage.getItem("score") === null) {
+    localStorage.setItem("score", 0);
+  }
+
+  function updateScoreDisplay() {
+    const scoreElements = document.querySelectorAll('.page4-score, .page4f-score');
+    const score = localStorage.getItem("score");
+    scoreElements.forEach(el => el.textContent = `${score}/5`);
+  }
+
+  function registerAnswer(isCorrect) {
+    let score = parseInt(localStorage.getItem("score"));
+    score += isCorrect ? 1 : 0;
+    localStorage.setItem("score", score);
+    updateScoreDisplay();
+  }
+
+  document.addEventListener('DOMContentLoaded', updateScoreDisplay);
+    document.addEventListener('DOMContentLoaded', () => {
+      const arrow = document.querySelector('.page4f-arrow');
+  
+      if (arrow) {
+        arrow.addEventListener('click', () => {
+          window.location.href = 'page7.html';
+        });
+      }
+    });
+  </script>
+  
+  <script>
+    function scaleApp() {
+      const app = document.querySelector(".app");
+      const scaleX = window.innerWidth / 1280;
+      const scaleY = window.innerHeight / 832;
+      const scale = Math.min(scaleX, scaleY);
+  
+      app.style.transform = `scale(${scale})`;
+    }
+  
+    window.addEventListener("resize", scaleApp);
+    window.addEventListener("DOMContentLoaded", scaleApp);
+  </script>
+
+<body>
+  <div class="viewport">
+    <div class="app">
+      <main class="page page-4">
+        <section class="page4f-frame">
+          <!-- Score indicator (top right) -->
+          <p class="page4f-score">0/5</p>
+  
+          <!-- Picture5 at top right -->
+          <img
+            src="assets/picture5.png"
+            alt="Background image"
+            class="page4f-picture5"
+          />
+  
+          <!-- Question header panel -->
+          <div class="page4-header-panel"></div>
+          <span class="page4-header-number">3:</span>
+          <img
+            src="assets/flag_uk_right.png"
+            alt="India flag"
+            class="page4-flag"
+          />
+          <span class="page4-header-text">Inspiring post</span>
+  
+          <!-- Main quote text -->
+          <p class="page4f-quote">
+              I need to work on getting the motivation and mindset to do exercise and out of works activities as it's a bit chicken and egg at the moment and I'm stuck in a cycle.
+          </p>
+  
+          <!-- Background images with shadows -->
+          <img
+            src="assets/picture3_figma.png"
+            alt="Background image 1"
+            class="page4f-bg-image page4f-bg-image-1"
+          />
+          <img
+            src="assets/picture4_figma.png"
+            alt="Background image 2"
+            class="page4f-bg-image page4f-bg-image-2"
+          />
+  
+          <!-- AI and Human labels -->
+          <p class="page4f-label page4f-label-ai">AI</p>
+          <p class="page4f-label page4f-label-human">Human</p>
+  
+          <!-- Right arrow -->
+          <img
+            src="assets/side_arrow_right_figma.png"
+            alt="Right arrow"
+            class="page4f-arrow"
+          />
+        </section>
+      </main>
+    </div>
+  </div>
+</body>

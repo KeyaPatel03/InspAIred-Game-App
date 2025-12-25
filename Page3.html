@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InspAIred Landing - Hero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <script>
+    // Fade in when page loads
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("page-visible");
+    });
+  </script>  
+  
+  <script>
+    localStorage.setItem("score", 0);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const arrow = document.querySelector('.hero-side-arrow');
+      const startBtn = document.querySelector('.hero-cta');
+  
+      if (arrow) {
+        arrow.addEventListener('click', () => {
+          window.location.href = 'Page2.html';
+        });
+      }
+  
+      if (startBtn) {
+        startBtn.addEventListener('click', () => {
+          window.location.href = 'Page4.html';
+        });
+      }
+    });
+  </script>
+  
+  <script>
+    function scaleApp() {
+      const app = document.querySelector(".app");
+      const scaleX = window.innerWidth / 1280;
+      const scaleY = window.innerHeight / 832;
+      const scale = Math.min(scaleX, scaleY);
+  
+      app.style.transform = `scale(${scale})`;
+    }
+  
+    window.addEventListener("resize", scaleApp);
+    window.addEventListener("DOMContentLoaded", scaleApp);
+  </script>
+
+<body>
+  <div class="viewport">
+    <div class="app">
+      <main class="page page-hero">
+        <section class="hero-frame">
+          <button class="hero-side-arrow" type="button" aria-label="Navigate">
+            <img src="assets/side_arrow.png" alt="" aria-hidden="true" />
+          </button>
+  
+          <div class="hero-visual">
+            <img src="assets/picture1.png" alt="Collage of inspiring scenes" />
+          </div>
+  
+          <h1 class="hero-title">AI vs Human</h1>
+          <p class="hero-subtitle">
+            Can you guess which post was written by an LLM?
+          </p>
+  
+          <button class="hero-cta">
+            <!-- <span class="cta-icon">▶</span> -->
+            <img
+              src="assets/play-button.png"
+              alt="Play"
+              class="cta-icon-img"
+            />
+            <span class="cta-text">Start Playing</span>
+          </button>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+
+  

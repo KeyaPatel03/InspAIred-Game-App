@@ -1,0 +1,15 @@
+{
+  "name": "inspaired-game-app",
+  "version": "1.0.0",
+  "description": "InspAIred Game App",
+  "scripts": {
+    "dev": "http-server . -o Menu.html",
+    "start": "http-server . -o Menu.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

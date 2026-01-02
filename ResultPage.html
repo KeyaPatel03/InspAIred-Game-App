@@ -249,7 +249,7 @@
           <img src="assets/picture5.png" alt="Result illustration" class="result-picture5" />
 
           <!-- GAME OVER title -->
-          <h1 class="result-game-over">GAME OVER!!</h1>
+          <h1 class="result-game-over">GAME SCORE!!</h1>
 
           <!-- Score display -->
           <p class="result-score" id="finalScore"></p>
@@ -287,13 +287,13 @@
         let message = "";
 
         if (score === 5) {
-          message = "Perfect score🤩 You're a Champion!";
+          message = "Perfect score🤩 You crushed it!";
         }
         else if (score >= 3) {
-          message = "Great job😎 You're a Smarty!";
+          message = "Well played😎 Keep it up!";
         }
         else if (score >= 0) {
-          message = "Nice try🫡 Wanna play again!?";
+          message = "You got this!🎮 Wanna play again?";
         }
 
         document.getElementById("resultMessage").innerHTML = message;

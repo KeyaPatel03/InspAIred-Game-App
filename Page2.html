@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>InspAIred Hint</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <script>
-    // Fade in when page loads
-    window.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("page-visible");
-    });
-  </script>  
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const leftArrow = document.querySelector('.hint-arrow-left');
-      const rightArrow = document.querySelector('.hint-arrow-right');
-  
-      if (leftArrow) {
-        leftArrow.addEventListener('click', () => {
-          window.location.href = 'Page1.html';
-        });
-      }
-  
-      if (rightArrow) {
-        rightArrow.addEventListener('click', () => {
-          window.location.href = 'Page3.html';
-        });
-      }
-    });
-  </script>
-  
-  <script>
-    function scaleApp() {
-      const app = document.querySelector(".app");
-      const scaleX = window.innerWidth / 1280;
-      const scaleY = window.innerHeight / 832;
-      const scale = Math.min(scaleX, scaleY);
-  
-      app.style.transform = `scale(${scale})`;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InspAIred Hint</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<script>
+  // Fade in when page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("page-visible");
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const leftArrow = document.querySelector('.hint-arrow-left');
+    const rightArrow = document.querySelector('.hint-arrow-right');
+
+    if (leftArrow) {
+      leftArrow.addEventListener('click', () => {
+        window.location.href = 'Page1.html';
+      });
     }
-  
-    window.addEventListener("resize", scaleApp);
-    window.addEventListener("DOMContentLoaded", scaleApp);
-  </script>
+
+    if (rightArrow) {
+      rightArrow.addEventListener('click', () => {
+        window.location.href = 'Page3.html';
+      });
+    }
+  });
+</script>
+
+<script>
+  function scaleApp() {
+    const app = document.querySelector(".app");
+    const scaleX = window.innerWidth / 1280;
+    const scaleY = window.innerHeight / 832;
+    const scale = Math.min(scaleX, scaleY);
+
+    app.style.transform = `scale(${scale})`;
+  }
+
+  window.addEventListener("resize", scaleApp);
+  window.addEventListener("DOMContentLoaded", scaleApp);
+</script>
 
 <body>
   <div class="viewport">
@@ -58,7 +59,7 @@
           <button class="hint-arrow hint-arrow-right" type="button" aria-label="Next">
             <img src="assets/side_arrow_right.png" alt="" aria-hidden="true" />
           </button>
-  
+
           <div class="hint-card">
             <h1 class="hint-title">Hint to ace in your game</h1>
             <ul class="hint-list">
@@ -71,14 +72,16 @@
               <li class="hint-item">
                 <span class="hint-bullet">•</span>
                 <div class="hint-text">
-                  <strong>Descriptiveness –</strong> LLM post overflow with adjectives. They’re more descriptive and elaborate,
+                  <strong>Descriptiveness –</strong> LLM post overflow with adjectives. They’re more descriptive and
+                  elaborate,
                   painting detailed scene. Like “Radiant sunrise of infinite hope.”
                 </div>
               </li>
               <li class="hint-item">
                 <span class="hint-bullet">•</span>
                 <div class="hint-text">
-                  <strong>Readability –</strong> Human developed post are easier to read, they keep it heart felt. LLM ones use longer
+                  <strong>Readability –</strong> Human developed post are easier to read, they keep it heart felt. LLM
+                  ones use longer
                   words and more complex phrasing by keeping it highbrow.
                 </div>
               </li>
@@ -90,47 +93,5 @@
   </div>
 </body>
 
-  <body>
-    <main class="page-hint">
-      <section class="hint-frame">
-        <button class="hint-arrow hint-arrow-left" type="button" aria-label="Previous">
-          <img src="assets/side_arrow.png" alt="" aria-hidden="true" />
-        </button>
-        <button class="hint-arrow hint-arrow-right" type="button" aria-label="Next">
-          <img src="assets/side_arrow_right.png" alt="" aria-hidden="true" />
-        </button>
 
-        <div class="hint-card">
-          <h1 class="hint-title">Hint to ace in your game</h1>
-          <ul class="hint-list">
-            <li class="hint-item">
-              <span class="hint-bullet">•</span>
-              <div class="hint-text">
-                <strong>Analytic writing:</strong> LLMs love structure. There’s more logic and less personal touch.
-              </div>
-            </li>
-            <li class="hint-item">
-              <span class="hint-bullet">•</span>
-              <div class="hint-text">
-                <strong>Descriptiveness –</strong> LLM post overflow with adjectives. They’re more descriptive and elaborate,
-                painting detailed scene. Like “Radiant sunrise of infinite hope.”
-              </div>
-            </li>
-            <li class="hint-item">
-              <span class="hint-bullet">•</span>
-              <div class="hint-text">
-                <strong>Readability –</strong> Human developed post are easier to read, they keep it heart felt. LLM ones use longer
-                words and more complex phrasing by keeping it highbrow.
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </main>
-  </body>
 </html>
-
-
-
-
-

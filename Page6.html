@@ -1,68 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>InspAIred - Question</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <script>
-    // Fade in when page loads
-    window.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("page-visible");
-    });
-  </script>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const ai = document.querySelector('.page4-label-ai');
-      const human = document.querySelector('.page4-label-human');
-  
-      if (ai) {
-        ai.addEventListener('click', () => {
-          registerAnswer(false);
-          window.location.href = 'page6_f.html';
-        });
-      }
-  
-      if (human) {
-        human.addEventListener('click', () => {
-          registerAnswer(true);
-          window.location.href = 'page6_t.html';
-        });
-      }
-    });
-  </script>
-  
-  <script>
-    // ===== SCORE SYSTEM =====
-    if (localStorage.getItem("score") === null) {
-      localStorage.setItem("score", 0);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InspAIred - Question</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<script>
+  // Fade in when page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("page-visible");
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const ai = document.querySelector('.page4-label-ai');
+    const human = document.querySelector('.page4-label-human');
+
+    if (ai) {
+      ai.addEventListener('click', () => {
+        registerAnswer(false);
+        window.location.href = 'Page6_f.html';
+      });
     }
-  
-    function updateScoreDisplay() {
-      const score = localStorage.getItem("score");
-      document
-        .querySelectorAll(".page4-score, .page4f-score")
-        .forEach(el => el.textContent = `${score}/5`);
+
+    if (human) {
+      human.addEventListener('click', () => {
+        registerAnswer(true);
+        window.location.href = 'Page6_t.html';
+      });
     }
-  
-    function registerAnswer(isCorrect) {
-      let score = parseInt(localStorage.getItem("score"));
-      score += isCorrect ? 1 : 0;
-      localStorage.setItem("score", score);
-      updateScoreDisplay();
-    }
-  
-    document.addEventListener("DOMContentLoaded", updateScoreDisplay);
-  </script>
+  });
+</script>
+
+<script>
+  // ===== SCORE SYSTEM =====
+  if (localStorage.getItem("score") === null) {
+    localStorage.setItem("score", 0);
+  }
+
+  function updateScoreDisplay() {
+    const score = localStorage.getItem("score");
+    document
+      .querySelectorAll(".page4-score, .page4f-score")
+      .forEach(el => el.textContent = `${score}/5`);
+  }
+
+  function registerAnswer(isCorrect) {
+    let score = parseInt(localStorage.getItem("score"));
+    score += isCorrect ? 1 : 0;
+    localStorage.setItem("score", score);
+    updateScoreDisplay();
+  }
+
+  document.addEventListener("DOMContentLoaded", updateScoreDisplay);
+</script>
 
 <script>
   function scaleApp() {
@@ -85,39 +83,24 @@
         <section class="page4-frame">
           <!-- Score indicator (top layer, positioned first for z-index) -->
           <p class="page4-score">0/5</p>
-  
+
           <!-- Background images (behind other content) -->
-          <img
-            src="assets/picture3.png"
-            alt="Background image 1"
-            class="page4-bg-image page4-bg-image-1"
-          />
-          <img
-            src="assets/picture4.png"
-            alt="Background image 2"
-            class="page4-bg-image page4-bg-image-2"
-          />
-          <img
-            src="assets/picture5.png"
-            alt="Background image 3"
-            class="page4-bg-image page4-bg-image-3"
-          />
-  
+          <img src="assets/picture3.png" alt="Background image 1" class="page4-bg-image page4-bg-image-1" />
+          <img src="assets/picture4.png" alt="Background image 2" class="page4-bg-image page4-bg-image-2" />
+          <img src="assets/picture5.png" alt="Background image 3" class="page4-bg-image page4-bg-image-3" />
+
           <!-- Question header panel -->
           <div class="page4-header-panel"></div>
           <span class="page4-header-number">3:</span>
-          <img
-            src="assets/flag_uk_right.png"
-            alt="India flag"
-            class="page4-flag"
-          />
+          <img src="assets/flag_uk_right.png" alt="India flag" class="page4-flag" />
           <span class="page4-header-text">Inspiring post</span>
-  
+
           <!-- Main quote text -->
           <p class="page4-quote">
-              I need to work on getting the motivation and mindset to do exercise and out of works activities as it's a bit chicken and egg at the moment and I'm stuck in a cycle.
+            I need to work on getting the motivation and mindset to do exercise and out of works activities as it's a
+            bit chicken and egg at the moment and I'm stuck in a cycle.
           </p>
-  
+
           <!-- AI and Human labels (positioned for selection) -->
           <p class="page4-label page4-label-ai">AI</p>
           <p class="page4-label page4-label-human">Human</p>

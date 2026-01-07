@@ -1,210 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>InspAIred - Results</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      /* Result page styles matching Figma design exactly */
-      .result-page {
-        display: block;
-        min-height: 832px;
-        padding: 0;
-        background: white;
-      }
 
-      .result-page .result-frame {
-        margin: 0 auto;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InspAIred - Results</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Result page styles matching Figma design exactly */
+    .result-page {
+      display: block;
+      min-height: 832px;
+      padding: 0;
+      background: white;
+    }
 
-      .result-frame {
-        position: relative;
-        width: 1280px;
-        height: 832px;
-        background: white;
-        overflow: hidden;
-      }
+    .result-page .result-frame {
+      margin: 0 auto;
+    }
 
-      /* Background rectangle */
-      .result-bg-rect {
-        position: absolute;
-        top: 109px;
-        left: 143px;
-        width: 1017px;
-        height: 613px;
-        background: #d9d9d9;
-        border-radius: 20px;
-        z-index: 1;
-      }
+    .result-frame {
+      position: relative;
+      width: 1280px;
+      height: 832px;
+      background: white;
+      overflow: hidden;
+    }
 
-      /* Picture5 image */
-      .result-picture5 {
-        position: absolute;
-        top: 140px;
-        left: 451px;
-        width: 346px;
-        height: 551px;
-        object-fit: cover;
-        opacity: 0.75;
-        z-index: 2;
-      }
+    /* Background rectangle */
+    .result-bg-rect {
+      position: absolute;
+      top: 109px;
+      left: 143px;
+      width: 1017px;
+      height: 613px;
+      background: #d9d9d9;
+      border-radius: 20px;
+      z-index: 1;
+    }
 
-      /* GAME OVER title */
-      .result-game-over {
-        position: absolute;
-        top: 61px;
-        left: 489px;
-        width: 270px;
-        height: 48px;
-        margin: 0;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        font-size: 40px;
-        font-weight: 800;
-        line-height: 1.21;
-        text-align: center;
-        background-image: linear-gradient(90deg, rgba(163, 52, 182, 1) 0%, rgba(94, 28, 103, 1) 91%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        z-index: 3;
-      }
+    /* Picture5 image */
+    .result-picture5 {
+      position: absolute;
+      top: 140px;
+      left: 451px;
+      width: 346px;
+      height: 551px;
+      object-fit: cover;
+      opacity: 0.75;
+      z-index: 2;
+    }
 
-      /* Score display (4/5) */
-      .result-score {
-        position: absolute;
-        top: 219px;
-        left: 504px;
-        width: 101px;
-        height: 73px;
-        margin: 0;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        font-size: 60px;
-        font-weight: 600;
-        line-height: 1.21;
-        text-align: center;
-        color: rgba(84, 79, 79, 0.97);
-        z-index: 3;
-      }
+    /* GAME OVER title */
+    .result-game-over {
+      position: absolute;
+      top: 61px;
+      left: 489px;
+      width: 270px;
+      height: 48px;
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.21;
+      text-align: center;
+      background-image: linear-gradient(90deg, rgba(163, 52, 182, 1) 0%, rgba(94, 28, 103, 1) 91%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      z-index: 3;
+    }
 
-      /* Great Job text */
-      .result-great-job {
-        position: absolute;
-        top: 365px;
-        left: 504px;
-        width: 240px;
-        height: 72px;
-        margin: 0;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        font-size: 30px;
-        font-weight: 700;
-        line-height: 1.21;
-        text-align: center;
-        color: #2c2a2a;
-        z-index: 3;
-      }
+    /* Score display (4/5) */
+    .result-score {
+      position: absolute;
+      top: 219px;
+      left: 504px;
+      width: 101px;
+      height: 73px;
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 60px;
+      font-weight: 600;
+      line-height: 1.21;
+      text-align: center;
+      color: rgba(84, 79, 79, 0.97);
+      z-index: 3;
+    }
 
-      /* Buttons */
-      .result-button {
-        position: absolute;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        z-index: 3;
-      }
+    /* Great Job text */
+    .result-great-job {
+      position: absolute;
+      top: 365px;
+      left: 504px;
+      width: 240px;
+      height: 72px;
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.21;
+      text-align: center;
+      color: #2c2a2a;
+      z-index: 3;
+    }
 
-      /* Replay button */
-      .result-replay-btn {
-        top: 532px;
-        left: 313px;
-        width: 162.63px;
-        height: 61.19px;
-        background: linear-gradient(180deg, rgba(163, 52, 182, 1) 0%, rgba(72, 23, 80, 1) 100%);
-      }
+    /* Buttons */
+    .result-button {
+      position: absolute;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      z-index: 3;
+    }
 
-      .result-replay-icon {
-        width: 36px;
-        height: 37px;
-        background: #d9d9d9;
-        border: 1px solid #ffffff;
-        border-radius: 4px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        margin-left: 4px;
-      }
+    /* Replay button */
+    .result-replay-btn {
+      top: 532px;
+      left: 313px;
+      width: 162.63px;
+      height: 61.19px;
+      background: linear-gradient(180deg, rgba(163, 52, 182, 1) 0%, rgba(72, 23, 80, 1) 100%);
+    }
 
-      .result-replay-icon::after {
-        content: '';
-        width: 0;
-        height: 0;
-        border-left: 12px solid #5e1c67;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        margin-left: 2px;
-      }
+    .result-replay-icon {
+      width: 36px;
+      height: 37px;
+      background: #d9d9d9;
+      border: 1px solid #ffffff;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-left: 4px;
+    }
 
-      .result-button-text {
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 1.21;
-        color: #ffffff;
-      }
+    .result-replay-icon::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 12px solid #5e1c67;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      margin-left: 2px;
+    }
 
-      /* Back to Home button */
-      .result-home-btn {
-        top: 532px;
-        left: 774px;
-        width: 197.76px;
-        height: 61.65px;
-        background: linear-gradient(180deg, rgba(163, 52, 182, 1) 0%, rgba(72, 23, 80, 1) 100%);
-      }
+    .result-button-text {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.21;
+      color: #ffffff;
+    }
 
-      /* Right arrow */
-      .result-arrow {
-        position: absolute;
-        top: 374px;
-        left: 1180px;
-        width: 125px;
-        height: 125px;
-        object-fit: cover;
-        z-index: 4;
-      }
+    /* Back to Home button */
+    .result-home-btn {
+      top: 532px;
+      left: 774px;
+      width: 197.76px;
+      height: 61.65px;
+      background: linear-gradient(180deg, rgba(163, 52, 182, 1) 0%, rgba(72, 23, 80, 1) 100%);
+    }
 
-      .result-replay-img {
-  width: 36px;        /* adjust to match Figma */
-  height: 36px;
-  object-fit: contain;
-}
-    </style>
-  </head>
+    /* Right arrow */
+    .result-arrow {
+      position: absolute;
+      top: 374px;
+      left: 1180px;
+      width: 125px;
+      height: 125px;
+      object-fit: cover;
+      z-index: 4;
+    }
 
-  <script>
-    // Fade in when page loads
-    window.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("page-visible");
-    });
-  </script>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const arrow = document.querySelector('.result-arrow');
-      const homeBtn = document.querySelector('.result-home-btn');
-      const replayBtn = document.querySelector('.result-replay-btn');
-    
-      if (homeBtn) {
+    .result-replay-img {
+      width: 36px;
+      /* adjust to match Figma */
+      height: 36px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<script>
+  // Fade in when page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("page-visible");
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const arrow = document.querySelector('.result-arrow');
+    const homeBtn = document.querySelector('.result-home-btn');
+    const replayBtn = document.querySelector('.result-replay-btn');
+
+    if (homeBtn) {
       homeBtn.addEventListener('click', () => {
         window.location.href = 'Page1.html';
       });
@@ -215,28 +214,28 @@
         window.location.href = 'Page2.html';
       });
     }
-    
-      if (arrow) {
-        arrow.addEventListener('click', () => {
-          window.location.href = 'LastPage.html';
-        });
-      } 
-    });
-  </script>
-  
-  <script>
-    function scaleApp() {
-      const app = document.querySelector(".app");
-      const scaleX = window.innerWidth / 1280;
-      const scaleY = window.innerHeight / 832;
-      const scale = Math.min(scaleX, scaleY);
-  
-      app.style.transform = `scale(${scale})`;
+
+    if (arrow) {
+      arrow.addEventListener('click', () => {
+        window.location.href = 'LastPage.html';
+      });
     }
-  
-    window.addEventListener("resize", scaleApp);
-    window.addEventListener("DOMContentLoaded", scaleApp);
-  </script>
+  });
+</script>
+
+<script>
+  function scaleApp() {
+    const app = document.querySelector(".app");
+    const scaleX = window.innerWidth / 1280;
+    const scaleY = window.innerHeight / 832;
+    const scale = Math.min(scaleX, scaleY);
+
+    app.style.transform = `scale(${scale})`;
+  }
+
+  window.addEventListener("resize", scaleApp);
+  window.addEventListener("DOMContentLoaded", scaleApp);
+</script>
 
 <body>
   <div class="viewport">
@@ -245,70 +244,58 @@
         <section class="result-frame">
           <!-- Background rectangle -->
           <div class="result-bg-rect"></div>
-  
+
           <!-- Picture5 image -->
-          <img
-            src="assets/picture5.png"
-            alt="Result illustration"
-            class="result-picture5"
-          />
-  
+          <img src="assets/picture5.png" alt="Result illustration" class="result-picture5" />
+
           <!-- GAME OVER title -->
-          <h1 class="result-game-over">GAME OVER!!</h1>
-  
+          <h1 class="result-game-over">GAME SCORE!!</h1>
+
           <!-- Score display -->
-          <p class="result-score" id="finalScore"></p> 
+          <p class="result-score" id="finalScore"></p>
           <script>
             document.getElementById("finalScore").textContent =
               localStorage.getItem("score") + "/5";
           </script>
-  
+
           <!-- Great Job text -->
           <p class="result-great-job" id="resultMessage"></p>
-  
+
           <!-- Replay button -->
           <button class="result-button result-replay-btn" type="button">
-            <img
-              src="assets/replay.png"
-              alt="Replay"
-              class="result-replay-img"
-            />
+            <img src="assets/replay.png" alt="Replay" class="result-replay-img" />
             <span class="result-button-text">Replay</span>
           </button>
-  
+
           <!-- Back to Home button -->
           <button class="result-button result-home-btn" type="button">
             <span class="result-button-text">Back to Home</span>
           </button>
-  
+
           <!-- Right arrow -->
-          <img
-            src="assets/side_arrow_right.png"
-            alt="Right arrow"
-            class="result-arrow"
-          />
+          <img src="assets/side_arrow_right.png" alt="Right arrow" class="result-arrow" />
         </section>
       </main>
       <script>
         const score = parseInt(localStorage.getItem("score")) || 0;
         const total = 5;
-      
+
         // Show score
         document.getElementById("finalScore").textContent = `${score}/${total}`;
-      
+
         // Pick message based on score
         let message = "";
-      
+
         if (score === 5) {
-          message = "Perfect score🔥 You're a Champion!";
-        } 
+          message = "Perfect score🤩 You crushed it!";
+        }
         else if (score >= 3) {
-          message = "Great job🌟 You're a Smarty!";
+          message = "Well played😎 Keep it up!";
         }
         else if (score >= 0) {
-          message = "Nice effort👍 Wanna play again!?";
+          message = "You got this!🎮 Wanna play again?";
         }
-      
+
         document.getElementById("resultMessage").innerHTML = message;
       </script>
     </div>

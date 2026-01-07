@@ -30,19 +30,19 @@ body {
 .viewport {
   width: 100vw;
   height: 100vh;
-  background: white;        
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-} 
+}
 
 /* Your actual design */
 .app {
   width: 1280px;
   height: 832px;
   transform-origin: center;
-} 
+}
 
 body.page-visible {
   opacity: 1;
@@ -119,7 +119,8 @@ body.page-visible {
 }
 
 .cta-icon-img {
-  width: 48px;      /* adjust if needed */
+  width: 48px;
+  /* adjust if needed */
   height: 38px;
   display: block;
   /* margin-right: 1px;  */
@@ -320,12 +321,12 @@ body.page-visible {
 
 .intro {
   position: absolute;
-  top: 44px;
+  top: 22px;
   left: 68px;
   width: 1137px;
   margin: 0;
   text-align: center;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 600;
   line-height: 1.21;
   color: #481750;
@@ -748,6 +749,8 @@ html {
   background: white !important;
 }
 
-body, .viewport, .app {
+body,
+.viewport,
+.app {
   background: white !important;
 }

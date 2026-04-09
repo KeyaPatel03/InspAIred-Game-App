@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     /* Page4_f specific styles matching Figma design exactly */
     .page4f-frame {
@@ -48,8 +49,6 @@
       opacity: 0.75;
       z-index: 1;
     }
-
-
 
     /* Main quote text - left aligned matching Page4.html */
     .page4f-quote {
@@ -239,4 +238,16 @@
       </main>
     </div>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: {
+          x: 0.80,
+          y: 0.10
+        }
+      });
+    });
+  </script>
 </body>

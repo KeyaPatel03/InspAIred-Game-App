@@ -279,6 +279,7 @@ body.page-visible {
   gap: 8px;
   padding-left: 32px;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .cta-icon {
@@ -321,7 +322,7 @@ body.page-visible {
 
 .intro {
   position: absolute;
-  top: 10px;
+  top: 7px;
   left: 68px;
   width: 1137px;
   margin: 0;
@@ -583,7 +584,7 @@ body.page-visible {
   font-size: 29px;
   font-weight: 600;
   line-height: 1.21;
-  color: rgba(0, 0, 0, 0.47);
+  color: #000000;
   z-index: 3;
 }
 
@@ -596,7 +597,7 @@ body.page-visible {
   font-size: 29px;
   font-weight: 600;
   line-height: 1.21;
-  color: rgba(0, 0, 0, 0.47);
+  color: #000000;
   z-index: 3;
 }
 

@@ -119,6 +119,7 @@
       justify-content: center;
       gap: 8px;
       z-index: 3;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
     /* Replay button */
@@ -205,7 +206,7 @@
 
     if (homeBtn) {
       homeBtn.addEventListener('click', () => {
-        window.location.href = 'Page1.html';
+        window.location.href = 'Menu.html';
       });
     }
 
@@ -249,7 +250,7 @@
           <img src="assets/picture5.png" alt="Result illustration" class="result-picture5" />
 
           <!-- GAME OVER title -->
-          <h1 class="result-game-over">GAME SCORE!!</h1>
+          <h1 class="result-game-over">GAME SCORE</h1>
 
           <!-- Score display -->
           <p class="result-score" id="finalScore"></p>
@@ -269,7 +270,7 @@
 
           <!-- Back to Home button -->
           <button class="result-button result-home-btn" type="button">
-            <span class="result-button-text">Back to Home</span>
+            <span class="result-button-text">Back to Menu</span>
           </button>
 
           <!-- Right arrow -->
@@ -286,11 +287,11 @@
         // Pick message based on score
         let message = "";
 
-        if (score === 5) {
+        if (score >= 5) {
           message = "Perfect score🤩 You crushed it!";
         }
         else if (score >= 3) {
-          message = "Well played😎 Keep it up!";
+          message = "Well played🤩 Keep it up!";
         }
         else if (score >= 0) {
           message = "You got this!🎮 Wanna play again?";

@@ -202,6 +202,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     const arrow = document.querySelector('.result-arrow');
     const replayBtn = document.querySelector('.result-replay-btn');
+    const homeBtn = document.querySelector('.result-home-btn');
 
     if (replayBtn) {
       replayBtn.addEventListener('click', () => {
@@ -212,6 +213,12 @@
     if (arrow) {
       arrow.addEventListener('click', () => {
         window.location.href = 'LastPage.html';
+      });
+    }
+
+    if (homeBtn) {
+      homeBtn.addEventListener('click', () => {
+        window.location.href = 'https://menu-page-for-game.vercel.app/';
       });
     }
   });

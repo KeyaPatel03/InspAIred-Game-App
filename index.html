@@ -50,6 +50,18 @@
 </script>
 
 <script>
+  // Connect exit button to menu page
+  document.addEventListener('DOMContentLoaded', () => {
+    const exitBtn = document.querySelector('.page1-exit-btn');
+    if (exitBtn) {
+      exitBtn.addEventListener('click', () => {
+        window.location.href = 'https://menu-page-for-game.vercel.app/';
+      });
+    }
+  });
+</script>
+
+<script>
   function scaleApp() {
     const app = document.querySelector(".app");
     const scaleX = window.innerWidth / 1280;
